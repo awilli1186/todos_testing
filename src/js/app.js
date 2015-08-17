@@ -2,8 +2,8 @@ import $ from 'jQuery';
 import {_} from 'underscore';
 import Backbone from 'backbone';
 
+import Router from './routers/router';
 import AppView from './views/app-view';
 
-var app = new AppView();
-  app.render();
+AppView.render();
   Backbone.history.start();

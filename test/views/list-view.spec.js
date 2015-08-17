@@ -60,4 +60,21 @@ describe('ListView', function(){
     expect(this.view.$('.view label')[0].innerText).toEqual(title);
     expect(this.view.$('.view label')[1].innerText).toEqual(title2);
   });
+
+  it('should filter items based on their completed status', function() {
+    this.collection.set(
+      [
+        {title: 'abc', completed: false},
+        {title: 'def', completed: true}
+      ]
+    );
+
+      this.collection.filter('active');
+      expect(this.view.$('.toggle:checked').length).toEqual(1);
+
+      this.collection.filter('');
+      expect(this.view.$('').length).toEqual(1);
+    );
+    );
+  });
 });

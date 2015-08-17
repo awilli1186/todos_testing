@@ -19,6 +19,7 @@ let ListView = Backbone.View.extend({
   },
 
   filterOne: function(todo) {
+    console.log('called', todo);
     todo.trigger('visible', this.filter);
   },
 
