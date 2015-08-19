@@ -1,14 +1,9 @@
-# Iron Yard Front End Boilerplate
+# Todos app with Testing
+
+- Todos App created for class as an introduction into Backbone.js and testing with Jasmine & Karma.
 
 
 ## Installation
-
-- `cd ~/dev`
-- `git clone git@github.com:theironyard-frontend-nashville/frontend-boilerplate.git <projectname>` replacing <projectname> with your own project name.
-- `cd <projectname>`
-- `rm -rf .git`
-- `git init`
--  Create a new repo on Github.com and [add the remote](https://help.github.com/articles/adding-a-remote/). 
 
 - `npm install`
   - This will install the node dependencies for you, and will also install any bower components.

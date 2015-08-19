@@ -3,12 +3,11 @@ import {_} from 'underscore';
 import $ from 'jquery';
 
  import TodoView from '../../src/js/views/todo-view';
- //import TodosCollection from '../../src/js/collections/todos';
  import TodoModel from '../../src/js/models/todo';
 
 describe('TodoView', function(){
   beforeEach(function(){
-    this.model = new TodoModel()
+    this.model = new TodoModel;
 
     this.view = new TodoView({
       model: this.model
@@ -25,16 +24,6 @@ describe('TodoView', function(){
     input.toggle(e);
     expect(input.toggle).toHaveBeenCalled();
     });
-
-
-  it('should run onDestroy() when button is clicked', function(){
-    let button = $('.destroy');
-    spyOn(button, 'destroy{}');
-    let e = jQuery.Event('click');
-
-    button.destroy(e);
-    expect(button.destroy).toHaveBeenCalled();
-  });
 
   it('should run onEdit() when label is dblclicked', function(){
     let label = $('label');
@@ -73,4 +62,14 @@ describe('TodoView', function(){
     input.trigger(e);
     expect(this.model.get('title')).toEqual('');
     });
+
+  it('should update title text on enter', function() {
+    let $input = this.view.$('.edit');
+    let title = $input.val();
+    let e = jQuery.Event('keyup', {keycode: 13} );
+    $input.val(title);
+    $input.trigger(e);
+
+    expect(this.model.get('title')).toEqual(title);
+  });
   });
